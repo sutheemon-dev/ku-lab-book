@@ -1,0 +1,534 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Prompt", sans-serif;
+}
+
+/* สร้าง placeholder สำหรับ fixed navbar */
+.mobile-nav-spacer {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-spacer {
+        display: block;
+        height: 56px;
+        /* ความสูงของ navbar บนมือถือ */
+    }
+}
+
+/*-------------nav----------------*/
+.navbar {
+    padding: 0.4rem 0.8rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 80%;
+    font-size: medium;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.brand-text .main {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2e7d32;
+}
+
+.brand-text .sub {
+    font-size: 0.75rem;
+}
+
+@media (max-width: 576px) {
+    .brand-text .main {
+        font-size: 0.8rem;
+    }
+
+    .brand-text .sub {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width:320px) and (max-width:380px) {
+    .brand-text .sub {
+        font-size: 0.65rem;
+        text-wrap: wrap;
+    }
+}
+
+.navbar-brand img {
+    margin-right: 0.1rem;
+    width: 50px;
+    height: 50px;
+}
+
+.nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+/* ปุ่มเข้าสู่ระบบและออกจากระบบ */
+.login-btn,
+.logout-btn {
+    border: none;
+    border-radius: 15px;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    background-color: #ff6f61;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #e65b50;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn:focus {
+    background-color: #e65b50;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn i,
+.logout-btn i {
+    margin-right: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 0.2rem;
+}
+
+.dropdown-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Offcanvas สำหรับมือถือ */
+.offcanvas-end {
+    width: 220px !important;
+    /* ลดขนาดความกว้าง */
+    background-color: #fff;
+    border-radius: 15px 0 0 15px;
+    box-shadow: -1px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.offcanvas-header {
+    padding: 1rem 0.8rem;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.offcanvas-body {
+    padding: 0.8rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 50px);
+}
+
+.offcanvas .nav-item {
+    margin: 0.3rem 0;
+}
+
+.offcanvas .nav-link {
+    font-size: 0.95rem;
+    color: #333;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    margin: 0 0.8rem;
+}
+
+.offcanvas .nav-link:hover {
+    background-color: #f8f9fa;
+}
+
+.offcanvas .nav-link i {
+    margin-right: 0.5rem;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.offcanvas .login-btn {
+    margin: 0.8rem;
+    width: calc(100% - 1.6rem);
+}
+
+.offcanvas .logout-btn {
+    margin: 0.8rem;
+    width: calc(100% - 1.6rem);
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.profile-section img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+}
+
+.profile-section .profile-info h6 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.profile-section .profile-info p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+@media (max-width: 991px) {
+    .navbar-brand {
+        font-size: 0.8rem;
+        max-width: 60%;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .navbar-nav {
+        text-align: left;
+    }
+}
+
+/*-----------END---------------*/
+/*------------dashboard-stats------------------*/
+.dashboard-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    gap: 5px;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.stat-card {
+    width: 200px;
+    height: 90px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 5px;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat-content {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Card Colors */
+.stat-users {
+    background-color: rgba(245, 192, 239, 1);
+}
+
+.stat-available {
+    background-color: rgba(20, 174, 92, 0.56);
+}
+
+.stat-reserved {
+    background-color: rgba(255, 204, 0, 0.57);
+}
+
+.stat-active {
+    background-color: rgba(236, 34, 31, 0.73);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-stats {
+        padding: 0 15px;
+        gap: 5px;
+        margin-top: 20px;
+    }
+
+    .stat-card {
+        width: calc(50% - 20px);
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 450px) {
+    .dashboard-stats {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stat-card {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/*------------END------------------*/
+
+/* ห้องคอมพิวเตอร์ */
+.container {
+    margin: 20px auto;
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    /* จัดกลาง */
+}
+
+.room-computer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* 12 คอลัมน์ */
+    grid-template-rows: repeat(9, 1fr);
+    /* 9 แถว */
+    gap: 4px;
+    /* ระยะห่างระหว่างกล่อง */
+    width: 100%;
+    /* ให้กริดขยายเต็มพื้นที่ */
+    height: auto;
+    /* ปรับความสูงอัตโนมัติ */
+    padding: 10px;
+    background-color: #f4f4fa;
+    box-sizing: border-box;
+}
+
+/* กล่องเครื่องคอมพิวเตอร์ */
+.pc-box {
+    position: relative;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 6px;
+    font-size: 0.7rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    height: 100%;
+    width: 100%;
+}
+
+.pc-box:hover {
+    transform: scale(1.05);
+}
+
+.empty-box {
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #666;
+}
+
+/* รหัสเครื่อง */
+.pc-id {
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+/* ป้ายสถานะ */
+.status-label {
+    position: absolute;
+    top: 4px;
+    left: 2px;
+    padding: 2px 6px;
+    font-size: 0.55rem;
+    border-radius: 10px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* ไอคอนเครื่อง */
+.pc-icon {
+    font-size: 1.3rem;
+    margin: 8px 0 3px;
+}
+
+/* ประเภทของเครื่อง */
+.pc-type {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* ปุ่มแก้ไข */
+.edit-btn {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    font-size: 0.5rem;
+    /* ขนาดฟอนต์เล็กลง */
+    padding: 3px 5px;
+    /* ลดขนาด padding */
+    border: none;
+    border-radius: 6px;
+    background-color: #FFCC00;
+    color: rgb(0, 0, 0);
+    /* เปลี่ยนสีตัวหนังสือเป็นสีดำ */
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+/* สีสถานะต่างๆ */
+.status-ว่าง .status-label {
+    background-color: #28a745;
+    /* สีเขียว */
+}
+
+.status-จองแล้ว .status-label {
+    background-color: #fd7e14;
+    /* สีส้ม */
+}
+
+.status-กำลังใช้งาน .status-label {
+    background-color: #dc3545;
+    /* สีแดง */
+}
+
+.status-ซ่อมบำรุง .status-label {
+    background-color: #6c757d;
+    /* สีเทา */
+}
+
+/*--------------nav-link-admin-room---------------*/
+.nav-link-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 10px;
+    gap: 30px;
+    flex-wrap: wrap;
+    /* เปลี่ยนจาก nowrap เป็น wrap */
+}
+
+@media (max-width: 780px) {
+    .nav-link-admin {
+        flex-direction: column;
+        align-items: stretch;
+        /* ให้ปุ่มยืดเต็ม */
+        gap: 15px;
+    }
+
+    .nav-link-admin button {
+        width: 90%;
+        /* ให้ปุ่มเล็กลงบนจอเล็ก */
+    }
+}
+
+.nav-link-admin button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-wrap: nowrap;
+}
+
+.admin-btn {
+    background-color: rgba(255, 226, 110, 0.5);
+}
+
+.admin-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 222, 92, 1);
+}
+
+.admin-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.room-btn {
+    background-color: rgba(50, 173, 230, 0.39);
+}
+
+.room-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(50, 173, 230, 1);
+}
+
+.room-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*--------------END---------------*/

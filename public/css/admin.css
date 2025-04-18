@@ -1,0 +1,287 @@
+/*---------------------custom-all-----------------------------*/
+.px-custom {
+    padding: 0 60px;
+}
+
+/*---------------------END----------------------------*/
+/*--------------nav-link-admin-room---------------*/
+.nav-link-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 10px;
+    gap: 30px;
+    flex-wrap: wrap; /* เปลี่ยนจาก nowrap เป็น wrap */
+}
+@media (max-width: 780px) {
+    .nav-link-admin {
+        flex-direction: column;
+        align-items: stretch; /* ให้ปุ่มยืดเต็ม */
+        gap: 15px;
+    }
+    .nav-link-admin button {
+        width: 90%; /* ให้ปุ่มเล็กลงบนจอเล็ก */
+    }
+}
+.nav-link-admin button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-wrap: nowrap;
+}
+
+.admin-btn {
+    background-color: rgba(255, 226, 110, 0.5);
+}
+
+.admin-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 222, 92, 1);
+}
+
+.admin-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.room-btn {
+    background-color: rgba(50, 173, 230, 0.39);
+}
+
+.room-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(50, 173, 230, 1);
+}
+
+.room-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*--------------END---------------*/
+/*--------------Input-------------*/
+.input-group-text {
+    border: none;
+}
+
+.input-search {
+    width: 312px;
+    outline: none;
+    border: none;
+    margin-left: 5px;
+}
+
+.input-search-1 {
+    width: 320px;
+    outline: none;
+    border: none;
+    margin-left: 5px;
+}
+
+.search-all {
+    border: solid black 1px;
+    margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    border-radius: 10px;
+    width: 346px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    min-width: 346px;
+    /* หรือกำหนดความกว้างขั้นต่ำที่ต้องการ */
+    flex-shrink: 0;
+    /* ป้องกันการย่อขนาด */
+}
+
+
+.search-all-1 {
+    border: solid black 1px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    border-radius: 10px;
+    width: 360px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.search-all:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.search-all-1:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.input-box-pc-1{
+    min-width: 80px;
+}
+.input-box-pc-2{
+    min-width: 80px;
+}
+.input-box-pc-3{
+    min-width: 80px;
+}
+
+/*--------------End-------------*/
+/* calendar */
+.calendar-2 {
+    width: 350px;
+}
+
+/* end */
+/*----------Search-items-full---------------*/
+.Search-for-items:focus {
+    background-color: #D9D9D9;
+    outline: none;
+    box-shadow: none;
+}
+
+.Search-for-items {
+    background-color: #D9D9D9;
+}
+
+/* ----------------end---------------------*/
+/* selece--drop-down------*/
+.input-filter:focus {
+    outline: none;
+}
+
+.input-filter {
+    width: 150px;
+    border: solid black 1px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 32px;
+    font-weight: 400;
+    font-size: medium;
+}
+
+.menu-dropdown {
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 32px;
+    border: solid black 1px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #D9D9D9;
+    border-left: none;
+}
+
+.menu-dropdown:focus {
+    background-color: #D9D9D9;
+}
+
+.menu-dropdown:hover {
+    border: solid black 1px;
+    background-color: rgba(85, 85, 85, 0.45);
+    border-left: none;
+}
+
+.dropdown-item:focus,
+.dropdown-item:active {
+    background-color: transparent !important;
+    color: inherit;
+    outline: none;
+    box-shadow: none;
+}
+
+.dropdown-menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-input {
+    width: 120px;
+}
+
+/*--------End--------*/
+.btn-status {
+    border: none;
+    border-radius: 20px;
+    font-size: small;
+    width: 80px;
+}
+
+.btn-status:hover {
+    filter: brightness(90%);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#btn-status-1 {
+    background-color: #7CD2A4;
+}
+
+#btn-status-2 {
+    background-color: #FFCC00;
+}
+
+#btn-status-3 {
+    background-color: #EC221F;
+}
+
+#btn-status-4 {
+    background-color: #D8D8D8;
+}
+
+.sup-text {
+    margin-right: 160px;
+}
+
+.container-xl {
+    text-wrap: nowrap;
+}
+
+/*--------------END-------------*/
+/*----------------------------------Insearch database- & clear-----------------------------*/
+.btn-Insearch {
+    justify-content: center;
+    align-items: center;
+    background-color: #D8D8D8;
+    width: 100px;
+    height: 32px;
+    border: none;
+}
+
+.btn-Insearch:active {
+    transform: scale(0.95);
+}
+
+.btn-Insearch:hover {
+    background-color: rgba(85, 85, 85, 0.45);
+}
+
+.btn-Insearch-2 {
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(236, 34, 31, 0.44);
+    width: 100px;
+    height: 32px;
+    border: none;
+}
+
+.btn-Insearch-2:hover {
+    background-color: rgba(236, 34, 31, 0.65);
+}
+
+#clearBtn:active {
+    background-color: rgba(236, 34, 31, 0.65) ;
+    transform: scale(0.95);
+}
+#clearBtn:focus {
+    background-color: rgba(236, 34, 31, 0.65) ;
+    box-shadow: inset 0 4px 8px rgba(237, 52, 52, 0.3);
+}
+/*-------------------------------------- end -----------------------------------*/
