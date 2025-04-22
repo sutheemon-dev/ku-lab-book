@@ -74,3 +74,82 @@ document.addEventListener('DOMContentLoaded', () => {
         inputIds.forEach(id => clearInput(id));
     });
 });
+
+// ฟังก์ชันอัปเดต header ปี ค.ศ. → พ.ศ.
+function updateYearHook(_, __, instance) {
+    const beYear = instance.currentYear + 543;
+    if (instance.currentYearElement) {
+      instance.currentYearElement.value = beYear;
+    }
+    if (instance.yearElements) {
+      instance.yearElements.forEach(el => {
+        if (el.tagName === "SELECT") {
+          Array.from(el.options).forEach(opt => {
+            opt.text = String(Number(opt.value) + 543);
+          });
+        }
+      });
+    }
+  }
+  
+  // ฟังก์ชันสร้างปุ่ม Clear | Today & ป้องกันสร้างซ้ำ
+  function injectButtons(instance) {
+    const cal = instance.calendarContainer;
+    if (cal._buttonsInjected) return;
+    const wrap = document.createElement("div");
+    wrap.classList.add("fp-button-wrap");
+  
+    const makeBtn = (txt, fn) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = txt;
+      b.classList.add("fp-button");
+      b.addEventListener("click", () => {
+        fn();
+        updateYearHook(null, null, instance);
+      });
+      return b;
+    };
+  
+    const sep = document.createElement("div");
+    sep.classList.add("fp-separator");
+  
+    wrap.append(
+      makeBtn("Clear", () => instance.clear()),
+      sep,
+      makeBtn("Today", () => instance.setDate(new Date()))
+    );
+    cal.appendChild(wrap);
+    cal._buttonsInjected = true;
+  }
+  
+  flatpickr("#datepicker", {
+    locale: "th",
+    dateFormat: "d/m/Y",
+    defaultDate: new Date(),
+    allowInput: false,
+    clickOpens: true,
+  
+    // แปลงปีใน cell & altInput
+    formatDate(date, fmt) {
+      const s = flatpickr.formatDate(date, fmt, this.l10n);
+      return s.replace(/(\d{4})$/, (_, y) => String(+y + 543));
+    },
+    // แปลงก่อน parse
+    parseDate(dateStr) {
+      const [d, m, y] = dateStr.split("/").map(Number);
+      return new Date(y - 543, m - 1, d);
+    },
+  
+    onReady(selectedDates, dateStr, instance) {
+      // คราวแรกก็ scale + inject ปุ่ม + แปลงปี
+      instance.calendarContainer.classList.add("datepicker-yy");
+      updateYearHook(selectedDates, dateStr, instance);
+      injectButtons(instance);
+    },
+    onOpen:        updateYearHook,
+    onMonthChange: updateYearHook,
+    onYearChange:  updateYearHook,
+    onClose:       updateYearHook
+  });
+  

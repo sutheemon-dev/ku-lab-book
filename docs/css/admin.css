@@ -12,18 +12,24 @@
     height: auto;
     padding: 10px;
     gap: 30px;
-    flex-wrap: wrap; /* เปลี่ยนจาก nowrap เป็น wrap */
+    flex-wrap: wrap;
+    /* เปลี่ยนจาก nowrap เป็น wrap */
 }
+
 @media (max-width: 780px) {
     .nav-link-admin {
         flex-direction: column;
-        align-items: stretch; /* ให้ปุ่มยืดเต็ม */
+        align-items: stretch;
+        /* ให้ปุ่มยืดเต็ม */
         gap: 15px;
     }
+
     .nav-link-admin button {
-        width: 90%; /* ให้ปุ่มเล็กลงบนจอเล็ก */
+        width: 90%;
+        /* ให้ปุ่มเล็กลงบนจอเล็ก */
     }
 }
+
 .nav-link-admin button {
     display: flex;
     justify-content: center;
@@ -122,21 +128,68 @@
 .search-all-1:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-.input-box-pc-1{
+
+.input-box-pc-1 {
     min-width: 80px;
 }
-.input-box-pc-2{
+
+.input-box-pc-2 {
     min-width: 80px;
 }
-.input-box-pc-3{
+
+.input-box-pc-3 {
     min-width: 80px;
 }
 
 /*--------------End-------------*/
 /* calendar */
-.calendar-2 {
-    width: 350px;
+/* ตรงนี้จะเลือก popup ทั้งหมดที่มีคลาส datepicker-yy */
+.flatpickr-calendar.datepicker-yy {
+    transform: scale(0.8) !important;
+    transform-origin: top left !important;
+    margin-top: 8px !important;
 }
+
+/* ถ้าตัว calendarContainer ไม่มีคลาส datepicker-yy แต่เราใส่คลาสไว้ที่ input #datepicker */
+#datepicker+.flatpickr-calendar {
+    transform: scale(0.8) !important;
+    transform-origin: top left !important;
+    margin-top: 8px !important;
+}
+/* ย่อขนาดและเลื่อนปฏิทินให้ชิด input */
+.flatpickr-calendar {
+    transform-origin: top left !important;
+    transform: scale(0.8) translate(0, -10px) !important;
+  }
+  
+  /* ถ้าคุณใช้คลาส datepicker-yy บน container ก็เปลี่ยน selector เป็น */
+  .datepicker-yy .flatpickr-calendar {
+    transform-origin: top left !important;
+    transform: scale(0.8) translate(0, -10px) !important;
+  }
+  
+/* แท็บปุ่ม Clear|Today */
+.fp-button-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+    border-top: 1px solid #ddd;
+}
+
+/* ปุ่ม */
+.fp-button {
+    margin: 0 8px;
+    /* เพิ่มสไตล์อย่างอื่นตามชอบ */
+}
+
+/* เส้นคั่น */
+.fp-separator {
+    width: 1px;
+    height: 1em;
+    background: #ccc;
+    margin: 0 8px;
+}
+
 
 /* end */
 /*----------Search-items-full---------------*/
@@ -277,11 +330,13 @@
 }
 
 #clearBtn:active {
-    background-color: rgba(236, 34, 31, 0.65) ;
+    background-color: rgba(236, 34, 31, 0.65);
     transform: scale(0.95);
 }
+
 #clearBtn:focus {
-    background-color: rgba(236, 34, 31, 0.65) ;
+    background-color: rgba(236, 34, 31, 0.65);
     box-shadow: inset 0 4px 8px rgba(237, 52, 52, 0.3);
 }
+
 /*-------------------------------------- end -----------------------------------*/
