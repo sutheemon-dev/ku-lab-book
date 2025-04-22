@@ -1,3 +1,0 @@
-const path = require('path');
-// ...
-app.use('/flatpickr', express.static(path.join(__dirname, 'node_modules/flatpickr')));
