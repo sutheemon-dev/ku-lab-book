@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "air-datepicker": "^3.5.3",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "flatpickr": "^4.6.13",
+    "mysql2": "^3.14.0"
+  }
+}

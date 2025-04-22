@@ -20,13 +20,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="./node_modules/air-datepicker/air-datepicker.css">
 </head>
 
 <body>
     <!-- Header -->
     <header class="header_ku navbar navbar-expand-lg bg-light px-3">
         <div class="KU_SubLogo d-flex align-items-center">
-            <img src="img/KU_SubLogo.png" alt="KU_SubLogo" width="50" height="50"/>
+            <img src="img/KU_SubLogo.png" alt="KU_SubLogo" width="50" height="50" />
             <p class="mb-0 fw-bold">ระบบจองคอมพิวเตอร์มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตบางเขน</p>
         </div>
 
@@ -50,8 +51,8 @@
     <!-- END -->
     <!-----------------------------------------search-1 ------------------------------------------------>
     <div class="container d-flex nav-link-admin ">
-        <button type="button" class="admin-btn"  onclick="location.href='admin.html'">ระบบจัดการแอดมิน</button>
-        <button type="button" class="room-btn "  onclick="location.href='room_admin.html'">ห้องคอมพิวเตอร์</button>
+        <button type="button" class="admin-btn" onclick="location.href='admin.html'">ระบบจัดการแอดมิน</button>
+        <button type="button" class="room-btn " onclick="location.href='room_admin.html'">ห้องคอมพิวเตอร์</button>
     </div>
     <div class="container-xl mb-2 ">
         <div class="d-flex search-all-1 ">
@@ -120,13 +121,31 @@
             <tbody class="fw-lighter">
                 <tr>
                     <th scope="row">1</th>
-                    <td><input type="text" class="w-50 input-box-pc-1" placeholder="PC-001"></td>
-                    <td><input type="text" class="w-50 input-box-pc-2" placeholder="Mac"></td>
-                    <td><input type="text" class="w-50 input-box-pc-3" placeholder="A-001"></td>
-                    <td>01-02-2568</td>
-                    <td>08:30</td>
-                    <td><button class="btn btn-success btn-sm">ว่าง</button></td>
-                    <td><button type="button" class="btn btn-info btn-sm ">บันทึก</button></td>
+                    <td><input type="text" class="w-auto input-box-pc-1" placeholder="PC-001"></td>
+                    <td><input type="text" class="w-auto input-box-pc-2" placeholder="Mac"></td>
+                    <td><input type="text" class="w-auto input-box-pc-3" placeholder="A-001"></td>
+                    <td><input id="thai-datepicker" placeholder="21/01/2568" readonly></td>
+                    <td><input type="time" class="w-auto input-box-pc-3" placeholder="A-001"></td>
+                    <td>
+                        <div class="dropdown ">
+                            <button id="dropdown-btn-7" class="btn btn-success btn-sm dropdown-toggle "
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                status
+                            </button>
+                            <ul class="dropdown-menu " data-target="#dropdown-btn-7">
+                                <li><button class="btn-status my-1 " id="btn-status-1" data-value="ว่าง">ว่าง</button>
+                                </li>
+                                <li><button class="btn-status my-1 " id="btn-status-2"
+                                        data-value="จองแล้ว">จองแล้ว</button></li>
+                                <li><button class="btn-status my-1 " id="btn-status-3"
+                                        data-value="กำลังใช้งาน">กำลังใช้งาน</button></li>
+                                <li><button class="btn-status my-1 " id="btn-status-4"
+                                        data-value="ซ่อมบำรุง">ซ่อมบำรุง</button></li>
+                            </ul>
+                        </div>
+                    </td>
+
+                    <td><button type="button" class="btn btn-info btn-sm ">เพิ่มคอมพิวเตอร์</button></td>
                 </tr>
             </tbody>
         </table>
@@ -317,13 +336,10 @@
     <!-----------------------------------------TASTING------------------------------------------------>
 
     <!-----------------------------------------END-TASTING------------------------------------------------>
-    <!-- Bootstrap Bundle with Popper -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous">
-        </script>
-    <!-- ใส่ Bootstrap JS (เวอร์ชัน 5) -->
-    <script src="js/main.js"></script>
+        integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
+        crossorigin="anonymous"></script>
+    <script src="js/admin.js"></script>
 </body>
 
 </html>
