@@ -14,46 +14,114 @@
         href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,500;1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header_ku navbar navbar-expand-lg bg-light px-3">
-        <div class="KU_SubLogo d-flex align-items-center">
-            <img src="img/KU_SubLogo.png" alt="KU_SubLogo" width="50" height="50" />
-            <p class="mb-0 fw-bold">ระบบจองคอมพิวเตอร์มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตบางเขน</p>
-        </div>
-
-        <!-- Hamburger -->
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarKU">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Menu -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarKU">
-            <ul class="navbar-nav gap-2 nav_bar">
-                <li class="nav-item"><a href="index.html" class="nav-link text-dark">หน้าแรก</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-dark">เกี่ยวกับเรา</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-dark">ติดต่อเรา</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-dark">เข้าสู่ระบบ</a></li>
-                <li class="nav-item"><img src="img/svg/solar_user-bold-duotone.svg" class="nav-link" alt="user"
-                        width="42px" /></li>
+    <!-- Navbar สำหรับหน้าจอใหญ่ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-flex">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/KU_SubLogo.png" alt="Logo" width="50" height="50">
+                <span>ระบบจองคอมพิวเตอร์มหาลัยเกษตรศาสตร์</span><span>วิทยาเขตบางเขน</span>
+            </a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">หน้าแรก</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ติดต่อเรา</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <button class="btn login-btn text-dark" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        เข้าสู่ระบบ
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">นักศึกษา</a></li>
+                        <li><a class="dropdown-item" href="admin.html">ผู้ดูแลระบบ</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
-    </header>
-    <!-- END -->
+    </nav>
+    <!-- Navbar สำหรับมือถือ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
+        <div class="container-fluid ">
+            <a class="navbar-brand " href="#">
+                <img src="img/KU_SubLogo.png" alt="Logo" width="30" height="30">
+                <div class="brand-text">
+                    <div class="main">ระบบจองคอมพิวเตอร์</div>
+                    <div class="sub">มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตบางเขน</div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        <!-- Profile Section -->
+                        <div class="profile-section">
+                            <img src="#" alt="Profile Picture">
+                            <div class="profile-info">
+                                <h6>ชื่อผู้ใช้</h6>
+                                <p>user@example.com</p>
+                            </div>
+                        </div>
+                        <!-- Menu Items -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html"><i class="fa-solid fa-home"></i>
+                                    หน้าแรก</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-info-circle"></i> เกี่ยวกับเรา</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-address-book"></i> ติดต่อเรา</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <button class="btn login-btn dropdown-toggle text-white" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-sign-in-alt"></i> เข้าสู่ระบบ
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="#">นักศึกษา</a></li>
+                                    <li><a class="dropdown-item" href="admin.html">ผู้ดูแลระบบ</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Logout Button -->
+                    <button class="btn logout-btn">
+                        <i class="fa-solid fa-sign-out-alt"></i> ออกจากระบบ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- เพิ่ม spacer เพื่อป้องกันการทับซ้อน -->
+    <div class="mobile-nav-spacer"></div>
     <!-----------------------------------------search-1 ------------------------------------------------>
-    <div class="container d-flex nav-link-admin ">
-        <button type="button" class="admin-btn" onclick="location.href='admin.html'">ระบบจัดการแอดมิน</button>
-        <button type="button" class="room-btn " onclick="location.href='room_admin.html'">ห้องคอมพิวเตอร์</button>
+    <div class="nav-link-admin">
+        <button type="button" class="admin-btn"><a href="admin.html"
+                class="text-dark text-decoration-none">ระบบจัดการแอดมิน</a></button>
+        <button type="button" class="room-btn "><a href="room_admin.html "
+                class="text-dark text-decoration-none">ห้องคอมพิวเตอร์</a></button>
     </div>
     <div class="container-xl mb-2 ">
         <div class="d-flex search-all-1 ">
@@ -80,8 +148,8 @@
                     <th scope="col">Update_table</th>
                 </tr>
             </thead>
-            <tbody class="fw-lighter table-hover">
-                <tr class="">
+            <tbody class="fw-lighter table-hover ">
+                <tr>
                     <th scope="row">1</th>
                     <td>PC-001</td>
                     <td>Mac</td>
@@ -105,64 +173,86 @@
     <!-----------------------------------------END----------------------------------------------------->
     <!-----------------------------------------ADD-PC-------------------------------------------------->
     <div class="container-xl">
-        <div class="fw-medium">เพิ่มจำนวนเครื่องคอมพิวเตอร์</div>
-        <table class="table table-hover container-xl">
-            <thead class="table-secondary">
+        <div class="fw-medium">เพิ่มเครื่องคอมพิวเตอร์</div>
+        <table class="table table-hover">
+            <thead class="table-secondary ">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">ชื่อเครื่อง</th>
                     <th scope="col">ประเภท</th>
                     <th scope="col">ตำแหน่งเครื่อง</th>
-                    <th scope="col">วันที่เพิ่ม</th>
+                    <th scope="col">วัน-เดือน-ปี</th>
                     <th scope="col">เวลา</th>
                     <th scope="col">สถานะ</th>
                     <th scope="col">Update_table</th>
                 </tr>
             </thead>
-            <tbody class="fw-lighter">
+            <tbody class="fw-lighter table-hover">
                 <tr>
                     <th scope="row">1</th>
-                    <td><input type="text" class="w-auto input-box-pc-1" placeholder="PC-001"></td>
-                    <td><input type="text" class="w-auto input-box-pc-2" placeholder="Mac"></td>
-                    <td><input type="text" class="w-auto input-box-pc-3" placeholder="A-001"></td>
-                    <td><input id="datepicker" class="datepicker w-auto input-box-pc-3" placeholder="dd/mm/yyyy"></td>
-                    <td><input type="time" class="w-auto input-box-pc-3" placeholder="A-001"></td>
+                    <td><input type="text" class="input-box-pc-1 " placeholder="PC-001"></td>
+                    <td><input type="text" class="input-box-pc-2" placeholder="Mac"></td>
+                    <td><input type="text" class="input-box-pc-3" placeholder="A-001"></td>
+                    <td><input id="datepicker-1" class="datepicker input-box-pc-3" placeholder="dd/mm/yyyy"></td>
+                    <td><input type="time" class="input-box-pc-3" placeholder="A-001"></td>
                     <td>
-                        <div class="dropdown ">
-                            <button id="dropdown-btn-7" class="btn btn-success btn-sm dropdown-toggle "
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                status
-                            </button>
-                            <ul class="dropdown-menu " data-target="#dropdown-btn-7">
-                                <li><button class="btn-status my-1 " id="btn-status-1" data-value="ว่าง">ว่าง</button>
+                        <div class="dropdown">
+                            <button id="dropdown-btn-7" class="btn btn-status btn-sm dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">status</button>
+
+                            <ul class="dropdown-menu" data-target="#dropdown-btn-7">
+                                <li><button class="btn-status my-1" id="btn-status-1" data-value="ว่าง">ว่าง</button>
                                 </li>
-                                <li><button class="btn-status my-1 " id="btn-status-2"
+                                <li><button class="btn-status my-1" id="btn-status-2"
                                         data-value="จองแล้ว">จองแล้ว</button></li>
-                                <li><button class="btn-status my-1 " id="btn-status-3"
+                                <li><button class="btn-status my-1" id="btn-status-3"
                                         data-value="กำลังใช้งาน">กำลังใช้งาน</button></li>
-                                <li><button class="btn-status my-1 " id="btn-status-4"
+                                <li><button class="btn-status my-1" id="btn-status-4"
                                         data-value="ซ่อมบำรุง">ซ่อมบำรุง</button></li>
                             </ul>
                         </div>
                     </td>
-
                     <td><button type="button" class="btn btn-info btn-sm ">เพิ่มคอมพิวเตอร์</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <div class="container-xl">
+        <div class="fw-medium">ลบเครื่องคอมพิวเตอร์</div>
+            <table class="table table-hover ">
+                <thead class="table-secondary ">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">ชื่อเครื่อง</th>
+                        <th scope="col">ประเภท</th>
+                        <th scope="col">ตำแหน่งเครื่อง</th>
+                        <th scope="col">Update_table</th>
+                    </tr>
+                </thead>
+                <tbody class="fw-lighter table-hover ">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><input type="text" class="input-box-pc-1 " placeholder="PC-001"></td>
+                        <td><input type="text" class="input-box-pc-2" placeholder="Mac"></td>
+                        <td><input type="text" class="input-box-pc-3" placeholder="A-001"></td>
+                        <td><button type="button" class="btn btn-info btn-sm ">เพิ่มคอมพิวเตอร์</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <!-----------------------------------------END------------------------------------------------>
     <!-----------------------------------search-2-full-site-------------------------------------------->
     <div class="container-xl">
         <p class="mb-0 fw-medium ">ข้อมูลการใช้งานเครื่องคอมพิวเตอร์</p>
-        <span class="sup-text ">วันที่เริ่ม</span><span>วันที่สิ้นสุด</span>
+        <span class="sup-text">วันที่เริ่ม</span><span>วันที่สิ้นสุด</span>
     </div>
     <div class="container-xl d-flex ">
-        <div class="calendar-2">
-            <form class="d-flex align-items-center">
-                <input type="date" id="startDate" name="startDate" class="form-control me-0 Search-for-items">
+        <div class="calendar-2 ">
+            <form class="d-flex align-items-center ">
+                <input id="datepicker-2" class="datepicker form-control me-0 Search-for-items" placeholder="dd/mm/yyyy">
                 <i class="material-icons ">arrow_right_alt</i>
-                <input type="date" id="endDate" name="endDate" class="form-control ms-0 Search-for-items">
+                <input id="datepicker-3" class="datepicker form-control ms-0 Search-for-items" placeholder="dd/mm/yyyy">
             </form>
         </div>
         <div class="d-flex search-all ms-4">
@@ -337,11 +427,12 @@
     <!-----------------------------------------TASTING------------------------------------------------>
 
     <!-----------------------------------------END-TASTING------------------------------------------------>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/th.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/th.js"></script>
     <script src="js/admin.js"></script>
 </body>
 

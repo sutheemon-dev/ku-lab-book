@@ -1,39 +1,270 @@
 /*---------------------custom-all-----------------------------*/
 .px-custom {
     padding: 0 60px;
+
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Prompt", sans-serif;
+    height: auto;
+}
+
+
+/* สร้าง placeholder สำหรับ fixed navbar */
+.mobile-nav-spacer {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-spacer {
+        display: block;
+        height: 56px;
+        /* ความสูงของ navbar บนมือถือ */
+    }
+}
+
+/*-------------nav----------------*/
+.navbar {
+    padding: 0.4rem 0.8rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 80%;
+    font-size: medium;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.brand-text .main {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #2e7d32;
+}
+
+.brand-text .sub {
+    font-size: 0.75rem;
+}
+
+@media (max-width: 576px) {
+    .brand-text .main {
+        font-size: 0.8rem;
+    }
+
+    .brand-text .sub {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width:320px) and (max-width:380px) {
+    .brand-text .sub {
+        font-size: 0.65rem;
+        text-wrap: wrap;
+    }
+}
+
+.navbar-brand img {
+    margin-right: 0.1rem;
+    width: 50px;
+    height: 50px;
+}
+
+.nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+/* ปุ่มเข้าสู่ระบบและออกจากระบบ */
+.login-btn,
+.logout-btn {
+    border: none;
+    border-radius: 15px;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    background-color: #ff6f61;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #e65b50;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn:focus {
+    background-color: #e65b50;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn i,
+.logout-btn i {
+    margin-right: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 0.2rem;
+}
+
+.dropdown-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Offcanvas สำหรับมือถือ */
+.offcanvas-end {
+    width: 220px !important;
+    /* ลดขนาดความกว้าง */
+    background-color: #fff;
+    border-radius: 15px 0 0 15px;
+    box-shadow: -1px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.offcanvas-header {
+    padding: 1rem 0.8rem;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.offcanvas-body {
+    padding: 0.8rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 50px);
+}
+
+.offcanvas .nav-item {
+    margin: 0.3rem 0;
+}
+
+.offcanvas .nav-link {
+    font-size: 0.95rem;
+    color: #333;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    margin: 0 0.8rem;
+}
+
+.offcanvas .nav-link:hover {
+    background-color: #f8f9fa;
+}
+
+.offcanvas .nav-link i {
+    margin-right: 0.5rem;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.offcanvas .login-btn {
+    margin: 0.8rem;
+    width: calc(100% - 1.6rem);
+}
+
+.offcanvas .logout-btn {
+    margin: 0.8rem;
+    width: calc(100% - 1.6rem);
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.profile-section img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+}
+
+.profile-section .profile-info h6 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.profile-section .profile-info p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+@media (max-width: 991px) {
+    .navbar-brand {
+        font-size: 0.8rem;
+        max-width: 60%;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .navbar-nav {
+        text-align: left;
+    }
+}
+
+/*-----------END---------------*/
 /*---------------------END----------------------------*/
 /*--------------nav-link-admin-room---------------*/
 .nav-link-admin {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
     padding: 10px;
-    gap: 30px;
-    flex-wrap: wrap;
-    /* เปลี่ยนจาก nowrap เป็น wrap */
-}
-
-@media (max-width: 780px) {
-    .nav-link-admin {
-        flex-direction: column;
-        align-items: stretch;
-        /* ให้ปุ่มยืดเต็ม */
-        gap: 15px;
-    }
-
-    .nav-link-admin button {
-        width: 90%;
-        /* ให้ปุ่มเล็กลงบนจอเล็ก */
-    }
+    gap: 20px;
+    flex-wrap: nowrap;
 }
 
 .nav-link-admin button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 250px;
     height: 60px;
     border: none;
@@ -47,6 +278,7 @@
 
 .admin-btn {
     background-color: rgba(255, 226, 110, 0.5);
+
 }
 
 .admin-btn:hover {
@@ -73,6 +305,20 @@
 .room-btn:active {
     transform: scale(0.98);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 780px) {
+    .nav-link-admin {
+        margin-top: 20px;
+        margin-left: 250px;
+    }
+}
+
+@media (max-width: 450px) {
+    .nav-link-admin {
+        margin-top: 20px;
+        margin-left: 500px;
+    }
 }
 
 /*--------------END---------------*/
@@ -105,11 +351,8 @@
     width: 346px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     min-width: 346px;
-    /* หรือกำหนดความกว้างขั้นต่ำที่ต้องการ */
     flex-shrink: 0;
-    /* ป้องกันการย่อขนาด */
 }
-
 
 .search-all-1 {
     border: solid black 1px;
@@ -130,45 +373,42 @@
 }
 
 .input-box-pc-1 {
-    min-width: 80px;
+    max-width: 100px;
+    min-width: 100px;
 }
 
 .input-box-pc-2 {
-    min-width: 80px;
+    max-width: 100px;
+    min-width: 100px;
 }
 
 .input-box-pc-3 {
-    min-width: 80px;
+    max-width: 120px;
+    min-width: 120px;
+}
+
+/* add pc */
+.add-pc-table {
+    width: 1000px;
+    min-width: 1000px;
+    flex-shrink: 0;
 }
 
 /*--------------End-------------*/
 /* calendar */
-/* ตรงนี้จะเลือก popup ทั้งหมดที่มีคลาส datepicker-yy */
-.flatpickr-calendar.datepicker-yy {
-    transform: scale(0.8) !important;
+/* ——— ปรับขนาดและตำแหน่งปฏิทิน ——— */
+.flatpickr-calendar {
+    /* origin เอาไว้ใช้ร่วมกับ translate/scale */
     transform-origin: top left !important;
+}
+
+.flatpickr-calendar.datepicker-yy {
+    /* ย่อขนาด และเลื่อนขึ้นนิดหน่อย */
+    transform: scale(0.8) translateY(-10px) !important;
     margin-top: 8px !important;
 }
 
-/* ถ้าตัว calendarContainer ไม่มีคลาส datepicker-yy แต่เราใส่คลาสไว้ที่ input #datepicker */
-#datepicker+.flatpickr-calendar {
-    transform: scale(0.8) !important;
-    transform-origin: top left !important;
-    margin-top: 8px !important;
-}
-/* ย่อขนาดและเลื่อนปฏิทินให้ชิด input */
-.flatpickr-calendar {
-    transform-origin: top left !important;
-    transform: scale(0.8) translate(0, -10px) !important;
-  }
-  
-  /* ถ้าคุณใช้คลาส datepicker-yy บน container ก็เปลี่ยน selector เป็น */
-  .datepicker-yy .flatpickr-calendar {
-    transform-origin: top left !important;
-    transform: scale(0.8) translate(0, -10px) !important;
-  }
-  
-/* แท็บปุ่ม Clear|Today */
+/* ——— ปุ่ม Clear | Today ของ flatpickr ——— */
 .fp-button-wrap {
     display: flex;
     justify-content: center;
@@ -176,13 +416,10 @@
     border-top: 1px solid #ddd;
 }
 
-/* ปุ่ม */
 .fp-button {
     margin: 0 8px;
-    /* เพิ่มสไตล์อย่างอื่นตามชอบ */
 }
 
-/* เส้นคั่น */
 .fp-separator {
     width: 1px;
     height: 1em;
@@ -190,8 +427,15 @@
     margin: 0 8px;
 }
 
+input:focus,
+.form-control:focus,
+.input-box-pc-3:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #000 !important;
+    /* เปลี่ยนเป็นสีขอบตามต้องการ */
+}
 
-/* end */
 /*----------Search-items-full---------------*/
 .Search-for-items:focus {
     background-color: #D9D9D9;
@@ -201,6 +445,12 @@
 
 .Search-for-items {
     background-color: #D9D9D9;
+}
+
+.calendar-2 {
+    width: 350px;
+    min-width: 350px;
+    flex-shrink: 0;
 }
 
 /* ----------------end---------------------*/
@@ -264,13 +514,14 @@
     border: none;
     border-radius: 20px;
     font-size: small;
-    width: 80px;
+    width: 85px;
 }
 
 .btn-status:hover {
     filter: brightness(90%);
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
+    
 }
 
 #btn-status-1 {
@@ -290,7 +541,7 @@
 }
 
 .sup-text {
-    margin-right: 160px;
+    margin-right: 135px;
 }
 
 .container-xl {
